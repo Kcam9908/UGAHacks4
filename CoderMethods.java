@@ -10,8 +10,8 @@ public class CoderMethods {
 	public CoderMethods() 
 		{
 		try {
-			//File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
-			File newFile = new File((System.getProperty("user.dir")+"\\src\\UGA\\EasyCoder.java"));
+			File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
+			//File newFile = new File((System.getProperty("user.dir")+"\\src\\UGA\\EasyCoder.java"));
 			print = new PrintWriter(newFile);
 			print.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
 			//System.out.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
@@ -28,7 +28,7 @@ public class CoderMethods {
 	
 	public void helloWorld()
 	{
-		print.print("\t\tSystem.out.println(\"Hello, World!\");]\n");
+		print.print("\t\tSystem.out.println(\"Hello, World!\");\n");
 	}//helloWorld
 	
 	
