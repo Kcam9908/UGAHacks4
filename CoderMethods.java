@@ -1,5 +1,4 @@
 package UGA;
-import java.util.*;
 import java.io.*;
 
 public class CoderMethods {
@@ -8,7 +7,8 @@ public class CoderMethods {
 	public CoderMethods() 
 		{
 		try {
-			File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
+			//File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
+			File newFile = new File((System.getProperty("user.dir")+"\\src\\UGA\\EasyCoder.java"));
 			print = new PrintWriter(newFile);
 			print.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
 			//System.out.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
