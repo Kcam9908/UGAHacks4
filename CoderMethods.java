@@ -28,7 +28,7 @@ public class CoderMethods {
 	
 	public void helloWorld()
 	{
-		print.print("\t\tSystem.out.println(\"Hello, World!\");");
+		print.print("\t\tSystem.out.println(\"Hello, World!\");]\n");
 	}//helloWorld
 	
 	
