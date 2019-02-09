@@ -2,8 +2,11 @@ package UGA;
 import java.io.*;
 
 public class CoderMethods {
+	
 	PrintWriter print;
 	int brackets = 2;
+	
+	
 	public CoderMethods() 
 		{
 		try {
@@ -21,6 +24,15 @@ public class CoderMethods {
 			}
 		}//constructor
 	
+	
+	
+	public void helloWorld()
+	{
+		print.print("\t\tSystem.out.println(\"Hello, World!\");");
+	}//helloWorld
+	
+	
+	
 	public void addition(int[] numbersA, String name)
 	{
 	String beginning = "int "+name+" = ";
@@ -33,6 +45,7 @@ public class CoderMethods {
 	print.print("\t\t"+beginning + expression+";\n");
 	}//addition
 
+	
 	
 	public void subtraction(int[] numbersB, String name)
 	{
@@ -48,6 +61,7 @@ public class CoderMethods {
 	}//subtraction
 	
 	
+	
 	public void multiply(int[] numbersC, String name)
 	{
 	String beginning = "int "+name+" = ";
@@ -56,10 +70,27 @@ public class CoderMethods {
 		{
 			expression += " * "+Integer.toString(x);
 		}
-	
 	//System.out.print("\t\t"+beginning +expression+";\n");
 	print.print("\t\t"+beginning +expression+";\n");
-	}//multiplication
+	}//multiply
+	
+	
+	
+	public void divide(int[] numbersD, String name)
+	{
+	String beginning = "int "+name+" = ";
+	String expression = "0";
+	for(int x : numbersD)
+		{
+			if(x != 0)
+				expression += " / "+Integer.toString(x);
+			else
+				System.out.println("Cannot divide by Zero.");
+		}
+	//System.out.print("\t\t"+beginning +expression+";\n");
+	print.print("\t\t"+beginning +expression+";\n");
+	}//divide
+	
 	
 	public void closer(){
 		{
@@ -85,27 +116,37 @@ public class CoderMethods {
 	public void varAdd(String var1, String var2, String name)
 	{
 		print.println("\t\tint "+name+" = "+var1+" + "+var2+";");
-	}
+	}//varAdd
+	
+	
 	
 	public void varSub(String var1, String var2, String name)
 	{
 		print.println("\t\tint "+name+" = "+var1+" - "+var2+";");
-	}
+	}//varSub
+	
+	
 	
 	public void varMult(String var1, String var2, String name)
 	{
 		print.println("\t\tint "+name+" = "+var1+" * "+var2+";");
-	}
+	}//varMult
+	
+	
 	
 	public void varDiv(String var1, String var2, String name)
 	{
 		print.println("\t\tint "+name+" = "+var1+" / "+var2+";");
-	}
+	}//varDiv
+	
+	
 	
 	public void printerMethod(String printed)
 	{
 		//System.out.println("\"The variable you printed is\"+ "+printed);
 		print.println("\t\tSystem.out.println(\"The value of the number you created is \" +"+printed+");");
-	}
+	}//printerMethod
 
+	
+	
 }//class

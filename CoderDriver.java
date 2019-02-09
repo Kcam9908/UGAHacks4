@@ -6,6 +6,7 @@ public class CoderDriver {
 
 	public static void main(String[] args) {
 		CoderMethods driver = new CoderMethods();
+		driver.helloWorld();
 		int[] numbers = {1,2,3,4,5};
 		driver.addition(numbers, "added");
 		driver.subtraction(numbers, "subbed");
