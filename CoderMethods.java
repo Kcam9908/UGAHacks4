@@ -148,7 +148,7 @@ public class CoderMethods {
 	public void printerMethod(String printed)
 	{
 		//System.out.println("\"The variable you printed is\"+ "+printed);
-		print.println("\t\tSystem.out.println(\"The value of the number you created is \" +"+printed+");");
+		print.println("\t\tSystem.out.println(\"The value of the variable \\\""+printed+"\\\" you created is \" +"+printed+");");
 	}//printerMethod
 
 	
