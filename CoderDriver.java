@@ -12,6 +12,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -35,7 +36,7 @@ public class CoderDriver extends Application{
     	stage.setTitle("Easy Java Coder");
     	
     	//creating borderpane
-    	BorderPane root = new BorderPane();
+    	GridPane root = new GridPane();
     	
     	//creating lable for welcome message
     	Label welcome = new Label();
@@ -49,19 +50,62 @@ public class CoderDriver extends Application{
     	TextField code = new TextField("Enter Code");
     	
     	//creating menu bar and adding menu
-    	MenuBar menu = new MenuBar();
-    	Menu code1 = new Menu("Choose Method To Create");
-    	MenuItem add = new MenuItem("Create Addition Method");
-    	MenuItem sub = new MenuItem("Create Subtraction Method");
-    	MenuItem mult = new MenuItem("Create Multiplication Method");
-    	MenuItem varAdd = new MenuItem("Create Variable Addition Method");
-    	MenuItem varSub = new MenuItem("Create Variable Subtraction Method");
-    	MenuItem varMult = new MenuItem("Create Variable Multiplication Method");
+    	Label message = new Label("Please Choose a Method");
+    	Button add = new Button("Addition");
+    	Button sub = new Button("Subtraction");
+    	Button mult = new Button("Multiplication");
+    	Button varAdd = new Button("Variable Addition");
+    	Button varSub = new Button("Variable Subtraction");
+    	Button varMult = new Button("Variable Multiplication");
+    	Button printMeth = new Button("Output Number");
+    	Button create = new Button("Create Java File");
     	//MenuItem div = new MenuItem("Create Division Method");
-    	MenuItem helloWorld = new MenuItem("Create Hello World Method");
-    	menu.getMenus().add(code1);
-    	code1.getItems().addAll(helloWorld, add, sub, mult, varAdd, varSub, varMult);
-    	root.setTop(menu);
+    	Button helloWorld = new Button("Hello World");
+    	helloWorld.setPrefWidth(200);
+    	add.setPrefWidth(200);
+    	sub.setPrefWidth(200);
+    	mult.setPrefWidth(200);
+    	varAdd.setPrefWidth(200);
+    	varSub.setPrefWidth(200);
+    	varMult.setPrefWidth(200);
+    	printMeth.setPrefWidth(200);
+    	create.setPrefWidth(200);
+    	root.setPadding(new Insets(10, 10, 10, 10));
+    	root.setVgap(30);
+    	root.setHgap(10);
+    	root.add(message, 1, 0);
+    	root.add(helloWorld, 0, 3);
+    	root.add(add, 1, 1);
+    	root.add(sub, 2, 1);
+    	root.add(mult, 0, 1);
+    	root.add(varAdd, 1, 2);
+    	root.add(varSub, 2, 2);
+    	root.add(varMult, 0, 2);
+    	root.add(printMeth, 1, 3);
+    	root.add(create, 2, 3);
+    	
+    	printMeth.setOnAction(new EventHandler<ActionEvent>() {
+    	    public void handle(ActionEvent event) {
+    	    	Button numButton = new Button("Enter");
+    	    	TextField nums = new TextField("Please Enter Variable You Would Like to Output");
+    	        VBox uInput = new VBox();
+    	        Stage printMeth = new Stage();
+    	        printMeth.setTitle("Output Number");
+    	        uInput.setPadding(new Insets(30, 20, 20, 20));
+    	        uInput.getChildren().addAll(nums, numButton);
+    	        uInput.setSpacing(10);
+    	        printMeth.setScene(new Scene(uInput, 400, 200));
+    	        printMeth.show();
+    	        
+    	        //add button event handler
+    	        numButton.setOnAction(new EventHandler<ActionEvent>() {
+					public void handle(ActionEvent event) {
+						String name = nums.getText();
+						driver.printerMethod(name);
+						printMeth.close();
+					} });
+    	    }
+    	});
     	
     	//event handler for hello world menu item
     	helloWorld.setOnAction(new EventHandler<ActionEvent>() {
@@ -69,6 +113,7 @@ public class CoderDriver extends Application{
     	    	Button helloButton = new Button("Click to create Hello World Method");
     	        HBox uInput = new HBox();
     	        Stage helloW = new Stage();
+    	        helloW.setTitle("Hello World");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().add(helloButton);
     	        helloW.setScene(new Scene(uInput, 300, 100));
@@ -83,6 +128,29 @@ public class CoderDriver extends Application{
     	    }
     	});
     	
+    	//event handler for hello world menu item
+    	create.setOnAction(new EventHandler<ActionEvent>() {
+    	    public void handle(ActionEvent event) {
+    	    	Button createButton = new Button("Create Java File?");
+    	    	createButton.setPrefWidth(200);
+    	        HBox uInput = new HBox();
+    	        Stage create = new Stage();
+    	        create.setTitle("Create Java File");
+    	        uInput.setPadding(new Insets(30, 20, 20, 20));
+    	        uInput.getChildren().add(createButton);
+    	        create.setScene(new Scene(uInput, 200, 100));
+    	        
+    	        create.show();
+    	        
+    	        createButton.setOnAction(new EventHandler<ActionEvent>() {
+					public void handle(ActionEvent event) {
+						driver.closer();
+						System.exit(0);
+					}
+    	        });
+    	    }
+    	});
+    	
     	//event handler for addition method menu item
     	add.setOnAction(new EventHandler<ActionEvent>() {
     	    public void handle(ActionEvent event) {
@@ -91,6 +159,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage add = new Stage();
+    	        add.setTitle("Addition");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
     	        uInput.setSpacing(10);
@@ -121,6 +190,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage sub = new Stage();
+    	        sub.setTitle("Subtraction");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
     	        uInput.setSpacing(10);
@@ -151,6 +221,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage mult = new Stage();
+    	        mult.setTitle("Multiplication");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
     	        uInput.setSpacing(10);
@@ -213,6 +284,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varAdd = new Stage();
+    	        varAdd.setTitle("Variable Addition");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
     	        uInput.setSpacing(10);
@@ -238,6 +310,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varSub = new Stage();
+    	        varSub.setTitle("Variable Subtraction");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
     	        uInput.setSpacing(10);
@@ -263,6 +336,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varMult = new Stage();
+    	        varMult.setTitle("Variable Multiplication");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
     	        uInput.setSpacing(10);
@@ -297,16 +371,13 @@ public class CoderDriver extends Application{
 			}
     	});
     	
-    	//putting hbox in middle of borderpane
-    	root.setCenter(mid);
-    	
     	//adding textfield and button to middle hbox
     	mid.getChildren().addAll(welcome);
     	mid.setPadding(new Insets(50, 30, 30, 30));
     	mid.setSpacing(10);
     	
     	//setting the scene
-        stage.setScene(new Scene(root, 270, 250));
+        stage.setScene(new Scene(root, 600, 300));
         stage.setResizable(false);
         stage.show();
     }//start
@@ -314,7 +385,7 @@ public class CoderDriver extends Application{
   //overriding stop method
     public void stop()
     {
-    	
+    	driver.closer();
     }//stop
 	
 	public static void main(String[] args) {
