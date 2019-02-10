@@ -6,12 +6,13 @@ public class CoderMethods {
 	PrintWriter print;
 	int brackets = 2;
 	
+	File newFile = new File((System.getProperty("user.dir")+"\\src\\UGA\\EasyCoder.java"));
 	
 	public CoderMethods() 
 		{
 		try {
-			File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
-			//File newFile = new File((System.getProperty("user.dir")+"\\src\\UGA\\EasyCoder.java"));
+			//File newFile = new File("C:\\Workspace2\\UGAHacks4\\src\\UGA\\EasyCoder.java");
+			
 			print = new PrintWriter(newFile);
 			print.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
 			//System.out.print("package UGA; \nimport UGA.CoderMethods;\npublic class EasyCoder\n\t{\n");
@@ -39,6 +40,7 @@ public class CoderMethods {
 	String expression = "0";
 	for(int x : numbersA)
 		{
+			if(x != 0)
 			expression += " + "+Integer.toString(x);
 		}
 	//System.out.print("\t\t"+beginning + expression+";\n");
@@ -53,6 +55,7 @@ public class CoderMethods {
 	String expression = "0";
 	for(int x : numbersB)
 		{
+			if(x != 0)
 			expression += " - "+Integer.toString(x);
 		}
 	
@@ -68,6 +71,7 @@ public class CoderMethods {
 	String expression = "1";
 	for(int x : numbersC)
 		{
+			if(x != 1)
 			expression += " * "+Integer.toString(x);
 		}
 	//System.out.print("\t\t"+beginning +expression+";\n");
@@ -76,10 +80,10 @@ public class CoderMethods {
 	
 	
 	
-	public void divide(int[] numbersD, String name)
+	/*public void divide(int[] numbersD, String name)
 	{
 	String beginning = "int "+name+" = ";
-	String expression = "0";
+	String expression = "1";
 	for(int x : numbersD)
 		{
 			if(x != 0)
@@ -89,7 +93,7 @@ public class CoderMethods {
 		}
 	//System.out.print("\t\t"+beginning +expression+";\n");
 	print.print("\t\t"+beginning +expression+";\n");
-	}//divide
+	}//divide*/
 	
 	
 	public void closer(){
