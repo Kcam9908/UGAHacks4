@@ -1,0 +1,25 @@
+/* 
+    Document   : Theme
+*/
+ 
+.root{
+    -fx-base: #6495ed;
+    -fx-background: #6495ed;
+    -fx-focus-color: #B6A678;
+}
+
+.label{
+    -fx-text-fill: "white";
+}
+ 
+.button{
+    -fx-text-fill: "white";
+    -fx-background-color: "dimgray";
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+ 
+.background{
+    -fx-background-color: #6395ed;
+}

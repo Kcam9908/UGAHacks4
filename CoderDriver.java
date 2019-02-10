@@ -90,6 +90,7 @@ public class CoderDriver extends Application{
     	    	TextField nums = new TextField("Please Enter Variable You Would Like to Output");
     	        VBox uInput = new VBox();
     	        Stage printMeth = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        printMeth.setTitle("Output Number");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(nums, numButton);
@@ -113,6 +114,7 @@ public class CoderDriver extends Application{
     	    	Button helloButton = new Button("Click to create Hello World Method");
     	        HBox uInput = new HBox();
     	        Stage helloW = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        helloW.setTitle("Hello World");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().add(helloButton);
@@ -135,6 +137,7 @@ public class CoderDriver extends Application{
     	    	createButton.setPrefWidth(200);
     	        HBox uInput = new HBox();
     	        Stage create = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        create.setTitle("Create Java File");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().add(createButton);
@@ -159,6 +162,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage add = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        add.setTitle("Addition");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
@@ -190,6 +194,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage sub = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        sub.setTitle("Subtraction");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
@@ -221,6 +226,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter Variable Name");
     	        VBox uInput = new VBox();
     	        Stage mult = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        mult.setTitle("Multiplication");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, nums, numButton);
@@ -284,6 +290,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varAdd = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        varAdd.setTitle("Variable Addition");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
@@ -310,6 +317,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varSub = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        varSub.setTitle("Variable Subtraction");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
@@ -336,6 +344,7 @@ public class CoderDriver extends Application{
     	    	TextField varName = new TextField("Please Enter New Variable Name");
     	        VBox uInput = new VBox();
     	        Stage varMult = new Stage();
+    	        uInput.getStylesheets().add("theme.css");
     	        varMult.setTitle("Variable Multiplication");
     	        uInput.setPadding(new Insets(30, 20, 20, 20));
     	        uInput.getChildren().addAll(varName, vars, numButton);
@@ -377,6 +386,7 @@ public class CoderDriver extends Application{
     	mid.setSpacing(10);
     	
     	//setting the scene
+    	root.getStylesheets().add("theme.css");
         stage.setScene(new Scene(root, 600, 300));
         stage.setResizable(false);
         stage.show();
